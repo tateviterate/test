@@ -1,0 +1,25 @@
+<nz-layout class="layout"
+  [ngClass]="{
+    'show-header': showHeader,
+    'show-footer': showFooter,
+    'show-header-and-footer': showHeader && showFooter
+  }"  
+>
+
+  <nz-header class="header"
+    *ngIf="showHeader"
+  >
+    <ng-content select="header"></ng-content>
+  </nz-header>
+
+  <nz-content class="content">
+    <ng-content select="section"></ng-content>
+  </nz-content>
+
+  <nz-header class="footer"
+    *ngIf="showFooter"
+  >
+    <ng-content select="footer"></ng-content>
+  </nz-header>
+
+</nz-layout>

@@ -1,0 +1,37 @@
+<form class="login-form" nz-form [formGroup]="validateForm" (ngSubmit)="submit()">
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group nzPrefixIcon="anticon anticon-user">
+        <input type="text" nz-input formControlName="UserName" placeholder="Username">
+      </nz-input-group>
+      <nz-form-explain *ngIf="validateForm.get('UserName').dirty && validateForm.get('UserName').errors">Please input your username!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group nzPrefixIcon="anticon anticon-lock">
+        <input type="password" nz-input formControlName="Password" placeholder="Password">
+      </nz-input-group>
+      <nz-form-explain *ngIf="validateForm.get('Password').dirty && validateForm.get('Password').errors">Please input your Password!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group [nzPrefix]="languageIcon">
+        <nz-select formControlName="Language" nzPlaceHolder="Choose Language">
+          <nz-option nzValue="en" nzLabel="English"></nz-option>
+          <nz-option nzValue="ru" nzLabel="Russian"></nz-option>
+        </nz-select>
+        <ng-template #languageIcon>
+            <i class="anticon anticon-global"></i>
+        </ng-template>
+      </nz-input-group>
+      <nz-form-explain *ngIf="validateForm.get('Language').dirty && validateForm.get('Language').errors">Please select a Language!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button [nzType]="'primary'" [nzLoading]="isLoading$ | async">Log in</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

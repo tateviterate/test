@@ -1,0 +1,27 @@
+<dg-container [options]="containerOptions">
+    <header>
+        <ul nz-menu [nzTheme]="'light'" [nzMode]="'horizontal'" style="line-height: 64px;">
+            <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+                <a routerLink="/admin/dashboard">Dashboard</a>
+            </li>
+            <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+                <a routerLink="/admin/players">Players</a>
+            </li>
+            <li nz-menu-item>
+                <nz-dropdown [nzTrigger]="'click'">
+                    <a nz-dropdown style="display: block;">
+                        Prodile
+                        <i class="anticon anticon-down"></i>
+                    </a>
+                    <ul nz-menu>
+                        <li nz-menu-item (click)="logout()">Logout</li>
+                    </ul>
+                </nz-dropdown>   
+            </li>
+        </ul>
+    </header>
+
+    <section class="dg-content">
+        <router-outlet></router-outlet>
+    </section>
+</dg-container>

@@ -1,0 +1,35 @@
+@import "./../../../styles/core/_variables";
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 380px;
+    .login-card {
+        box-shadow: @dg-shadow;
+        background: transparent;
+        .ant-card-head {
+            background: transparent;
+            padding: 0;
+            .ant-card-head-title {
+                background-color: #007a8a;
+                padding: 0;
+                opacity: .8;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                .logo {
+                    height: 60px;
+                    width: 100%;
+                    background-image: url(/assets/logo_white.svg);
+                    background-size: 180px auto;
+                    background-repeat: no-repeat;
+                    background-position: 50%;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .ant-card-body {
+            background: #fff;
+        }
+    }
+}
